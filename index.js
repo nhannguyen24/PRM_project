@@ -22,7 +22,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Capstone Matching API",
+      title: "Football Field Booking APIs",
       version: "1.0.0",
     },
     servers: [

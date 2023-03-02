@@ -34,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.INTEGER(10),
     role_id: {
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4
     },
     status: {
       type: DataTypes.ENUM,

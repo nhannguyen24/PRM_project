@@ -103,11 +103,6 @@ const getUserById = (user_id) =>
             as: "user_role",
             attributes: ["role_id", "role_name"],
           },
-          {
-            model: db.Major,
-            as: "user_major",
-            attributes: ["major_id", "major_name"],
-          },
         ],
       });
       if (user) {

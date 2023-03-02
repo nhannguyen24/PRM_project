@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "quan",
-    "database": "prm_database",
-    "host": "127.0.0.1",
+    "username": "dk11aj8slxoh5qc8",
+    "password": "ztg3rirzatsat3cj",
+    "database": "p4ryffdaygn1vgtl",
+    "host": "frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "logging": false,
     "timezone": "+07:00"
@@ -16,10 +16,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "quan",
-    "database": "prm_database",
-    "host": "127.0.0.1",
+    "username": "dk11aj8slxoh5qc8",
+    "password": "ztg3rirzatsat3cj",
+    "database": "p4ryffdaygn1vgtl",
+    "host": "frwahxxknm9kwy6c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "logging": false,
     "timezone": "+07:00"
