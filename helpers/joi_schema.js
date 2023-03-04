@@ -79,6 +79,34 @@ const role_id = joi.string().required().messages({
   "string.empty": `avatar is not allowed to be empty`,
 });
 
+const field_name = joi.string().required().messages({
+  "string.empty": `field_name is not allowed to be empty`,
+});
+
+const image = joi.string().required().messages({
+  "string.empty": `image is not allowed to be empty`,
+});
+
+const available_slot = joi.string().required().messages({
+  "string.empty": `available_slot is not allowed to be empty`,
+});
+
+const center_id = joi.string().required().messages({
+  "string.empty": `center_id is not allowed to be empty`,
+});
+
+const field_id = joi.string().required().messages({
+  "string.empty": `field_id is not allowed to be empty`,
+});
+
+const field_type_id = joi.string().required().messages({
+  "string.empty": `field_type_id is not allowed to be empty`,
+});
+
+const field_ids = joi.array().required().messages({
+  'any.required': 'field_ids are required'
+});
+
 
 module.exports = {
   name,
@@ -108,5 +136,11 @@ module.exports = {
   user_name, 
   avatar,
   role_id,
-  
+  field_name,
+  image,
+  available_slot,
+  center_id,
+  field_type_id,
+  field_ids,
+  field_id
 };
