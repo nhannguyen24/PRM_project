@@ -199,7 +199,7 @@ router.put("/:id", controllers.deleteField);
  *         in: path
  *         schema:
  *           type: string
- *         description: Find field by student_id
+ *         description: Find field by field_id
  *     responses:
  *       200:
  *         description: For get the field by id

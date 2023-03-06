@@ -17,16 +17,32 @@ const getAllFields = ({ page, limit, order, field_name, ...query }) =>
         ...queries,
         attributes: {
           exclude: [
-            "createAt",
-            "updateAt",
-            "refresh_token",
+            "createdAt",
+            "updatedAt",
           ],
         },
         include: [
           {
             model: db.Center,
             as: "field_center",
-            attributes: ["center_id", "center_name", "address"],
+            attributes: {
+              exclude: [
+                "status",
+                "createdAt",
+                "updatedAt",
+              ],
+            },
+          },
+          {
+            model: db.FieldType,
+            as: "field_type",
+            attributes: {
+              exclude: [
+                "status",
+                "createdAt",
+                "updatedAt",
+              ],
+            },
           },
         ],
       });
@@ -51,7 +67,7 @@ const createField = (body) =>
       resolve({
         msg: fields[1]
           ? "Create new field successfully"
-          : "Cannot create new field",
+          : "Cannot create new field/Field's name already had",
       });
     } catch (error) {
       reject(error);
@@ -71,7 +87,7 @@ const deleteField = (field_ids) =>
         msg:
           fields > 0
             ? `${fields} field is deleted`
-            : "Cannot delete field/ field_id not found",
+            : "Cannot delete field/field_id not found",
       });
     } catch (error) {
       reject(error);
@@ -89,14 +105,30 @@ const getFieldById = (field_id) =>
           exclude: [
             "createAt",
             "updateAt",
-            "refresh_token",
           ],
         },
         include: [
           {
             model: db.Center,
             as: "field_center",
-            attributes: ["center_id", "center_name", "address"],
+            attributes: {
+              exclude: [
+                "status",
+                "createdAt",
+                "updatedAt",
+              ],
+            },
+          },
+          {
+            model: db.FieldType,
+            as: "field_type",
+            attributes: {
+              exclude: [
+                "status",
+                "createdAt",
+                "updatedAt",
+              ],
+            },
           },
         ],
       });

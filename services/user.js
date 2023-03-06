@@ -60,9 +60,14 @@ const updateUser = ({ user_id, ...body }) =>
     }
   });
 
-const deleteUser = (user_ids) =>
+const deleteUser = (user_ids, user_id) =>
   new Promise(async (resolve, reject) => {
     try {
+      if (user_ids.includes(user_id)) {
+        resolve({
+          msg: "Cannot delete user/ Account is in use",
+        });
+      } else {
       const users = await db.User.update(
         { status: "Deactive" },
         {
@@ -75,6 +80,7 @@ const deleteUser = (user_ids) =>
             ? `${users} user delete`
             : "Cannot delete user/ user_id not found",
       });
+    };
     } catch (error) {
       reject(error);
     }

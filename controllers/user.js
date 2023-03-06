@@ -27,9 +27,10 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     try {
+        const {user_id} = req.user;
         const { error } = joi.object({user_ids}).validate(req.query);
         if (error) throw new BadRequestError(error.details[0].message);
-        const response = await services.deleteUser(req.query.user_ids);
+        const response = await services.deleteUser(req.query.user_ids, user_id);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
