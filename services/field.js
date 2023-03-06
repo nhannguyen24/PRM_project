@@ -28,6 +28,11 @@ const getAllFields = ({ page, limit, order, field_name, ...query }) =>
             as: "field_center",
             attributes: ["center_id", "center_name", "address"],
           },
+          {
+            model: db.FieldType,
+            as: "field_type",
+            attributes: ["field_type_id", "field_type_name"],
+          },  
         ],
       });
       resolve({
@@ -98,6 +103,11 @@ const getFieldById = (field_id) =>
             as: "field_center",
             attributes: ["center_id", "center_name", "address"],
           },
+          {
+            model: db.FieldType,
+            as: "field_type",
+            attributes: ["field_type_id", "field_type_name"],
+          },  
         ],
       });
       if (field) {
