@@ -44,6 +44,11 @@ const getAllFields = ({ page, limit, order, field_name, ...query }) =>
               ],
             },
           },
+          {
+            model: db.FieldType,
+            as: "field_type",
+            attributes: ["field_type_id", "field_type_name"],
+          },  
         ],
       });
       resolve({
@@ -130,6 +135,11 @@ const getFieldById = (field_id) =>
               ],
             },
           },
+          {
+            model: db.FieldType,
+            as: "field_type",
+            attributes: ["field_type_id", "field_type_name"],
+          },  
         ],
       });
       if (field) {
